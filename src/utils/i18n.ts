@@ -8,7 +8,8 @@ const resources = {
       titlePromotion: "Promotions",
       bestSellers: 'Best Sellers',
       seeAll: 'SEE ALL',
-      about: 'About'
+      about: 'About',
+      cart: 'ADD TO CART'
     },
   },
   br: {
@@ -17,7 +18,8 @@ const resources = {
       titlePromotion: "Promoções",
       bestSellers: 'Mais vendidos',
       seeAll: 'VER TUDO',
-      about: 'Sobre'
+      about: 'Sobre',
+      cart: 'ADICIONAR AO CARRINHO'
     },
   },
 };

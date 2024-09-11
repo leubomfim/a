@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { FaCartPlus } from "react-icons/fa";
 
 interface ProductsType {
   id: number;
@@ -39,12 +40,23 @@ export const ProductionHome = (props: Props) => {
                 {t("seeAll")} {`>`}
               </Link>
             </div>
-            <div className="pt-[10px]">
+            <div className="pt-[20px]">
               {promotions.map((promotion) => (
-                <div className="w-[200px] h-[200px]" key={promotion.id}>
-                  <p>{promotion.title}</p>
-                  <p>{promotion.price}</p>
-                  <p>{promotion.discount}</p>
+                <div
+                  className="w-[268px] h-[436px] border-solid border-zinc-400 border-1 rounded p-2 flex flex-col"
+                  key={promotion.id}
+                >
+                  <div className="w-full h-[150px]"></div>
+                  <div className="mt-auto">
+                    <p>{promotion.title}</p>
+                    <p>{promotion.price}</p>
+                    <p>{promotion.discount}</p>
+                  </div>
+                  <div className="mt-auto">
+                    <button className="w-full bg-blue-500 text-white rounded py-3 font-semibold text-xs flex justify-center items-center gap-2 transition-colors hover:bg-blue-400">
+                      {t("cart")} {<FaCartPlus className="text-2xl " />}
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>

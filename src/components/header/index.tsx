@@ -1,8 +1,8 @@
 
 import { type FormEvent, useEffect, useState } from "react";
-// import { useQuery } from "@tanstack/react-query";
-// import { getUsers } from "../../api/api";
-import { NavItemsType, ThemeTypes } from "./types";
+import { useQuery } from "@tanstack/react-query";
+import { getUsers } from "../../api/api";
+import { NavItemsType, ThemeTypes, HomeUsersProp } from "./types";
 
 import { IoIosSearch } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
@@ -14,10 +14,10 @@ import { Logo } from '../../assets/icons/logo'
 import { useTranslation } from "react-i18next";
 
 export const Header = () => {
-  // const { data, isLoading } = useQuery({
-  //   queryKey: ["getUsers"],
-  //   queryFn: getUsers,
-  // });
+  const { data, isLoading } = useQuery({
+    queryKey: ["getUsers"],
+    queryFn: getUsers,
+  });
   const { t } = useTranslation();
   const [searchValue, setSearchValue] = useState("");
   const [toggleSearch, setToggleSearch] = useState(false);
@@ -49,15 +49,15 @@ export const Header = () => {
     event.preventDefault();
   };
 
-  // const dataOrFiltered =
-  //   searchValue.length <= 0
-  //     ? data
-  //     : data.filter((el: { name: string }) => {
-  //         return el.name
-  //           .toString()
-  //           .toLowerCase()
-  //           .includes(searchValue.toLowerCase());
-  //       });
+  const dataOrFiltered =
+    searchValue.length <= 0
+      ? data
+      : data.filter((el: { name: string }) => {
+          return el.name
+            .toString()
+            .toLowerCase()
+            .includes(searchValue.toLowerCase());
+        });
 
   // function change() {
   //   const toggleTheme = theme.filter((el) => {
@@ -164,8 +164,8 @@ export const Header = () => {
                   }
                 )}
               >
-                {/* {isLoading ? (
-                  <Loading />
+                {isLoading ? (
+                  <div>Is loading</div>
                 ) : dataOrFiltered.length > 0 ? (
                   <div className="flex flex-col gap-[20px]">
                     {dataOrFiltered.map((user: HomeUsersProp) => (
@@ -186,7 +186,7 @@ export const Header = () => {
                       <p>Not found</p>
                     </div>
                   </>
-                )} */}
+                )}
               </div>
             </div>
           </form>

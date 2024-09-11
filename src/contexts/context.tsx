@@ -1,3 +1,4 @@
+
 import { createContext, ReactNode, useContext, useEffect } from "react";
 import P from "prop-types";
 import i18next from "../utils/i18n.ts";
@@ -9,7 +10,7 @@ interface Props {
   children?: ReactNode
 }
 
-export const nextBuyContext = createContext<ContextTypes>({
+const nextBuyContext = createContext<ContextTypes>({
   i18next
 });
 

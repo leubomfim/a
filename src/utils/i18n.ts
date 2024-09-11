@@ -6,12 +6,18 @@ const resources = {
     translation: {
       title: "Products",
       titlePromotion: "Promotions",
+      bestSellers: 'Best Sellers',
+      seeAll: 'SEE ALL',
+      about: 'About'
     },
   },
   br: {
     translation: {
       title: "Produtos",
       titlePromotion: "Promoções",
+      bestSellers: 'Mais vendidos',
+      seeAll: 'VER TUDO',
+      about: 'Sobre'
     },
   },
 };

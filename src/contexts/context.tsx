@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode, useContext, useEffect } from "react";
 import P from "prop-types";
 import i18next from "../utils/i18n.ts";
 
@@ -14,6 +14,16 @@ export const nextBuyContext = createContext<ContextTypes>({
 });
 
 export const NextBuyProvider = ({children}: Props) => {
+  const languageStorage = localStorage.getItem('language')
+
+  useEffect(() => {
+    if (languageStorage === null) {
+      localStorage.setItem('language', 'br')
+      i18next.changeLanguage('br')
+    } else {
+      i18next.changeLanguage(languageStorage)
+    }
+  }, [languageStorage])
 
   const nextObject = {
     i18next

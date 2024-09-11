@@ -11,32 +11,36 @@ import classNames from "classnames";
 import { theme } from "../../assets/theme";
 import { Link } from "react-router-dom";
 import { Logo } from '../../assets/icons/logo'
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
   // const { data, isLoading } = useQuery({
   //   queryKey: ["getUsers"],
   //   queryFn: getUsers,
   // });
+  const { t } = useTranslation();
   const [searchValue, setSearchValue] = useState("");
   const [toggleSearch, setToggleSearch] = useState(false);
   const [themeToggle, setThemeToggle] = useState<ThemeTypes[]>([]);
+
   useEffect(() => {
     const rightTheme: ThemeTypes[] = theme.filter((el) => {
       return el.id === 2;
     });
     setThemeToggle(rightTheme);
   }, []);
+  
   const navItems: NavItemsType[] = [
     {
-      label: "Products",
+      label: t('title'),
       path: "/products",
     },
     {
-      label: "Promotions",
-      path: "/promotions",
+      label: t('bestSellers'),
+      path: "/products",
     },
     {
-      label: "About",
+      label: t('about'),
       path: "/about",
     },
   ];
@@ -110,7 +114,7 @@ export const Header = () => {
                   className="transition-all ease-in-out duration-500 bg-white py-[12px] px-[30px] rounded-[4px] text-xl cursor-pointer text-black hover:text-[#5086FA]"
                   type="button"
                 >
-                  Login
+                  Sign in
                 </button>
               </Link>
               <Link to={"/register"}>
@@ -118,7 +122,7 @@ export const Header = () => {
                   className="transition-all ease-in-out duration-300 bg-black py-[12px] px-[30px] rounded-[4px] text-xl cursor-pointer text-white hover:bg-gray-700"
                   type="button"
                 >
-                  Register
+                  Sign up
                 </button>
               </Link>
             </div>

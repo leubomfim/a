@@ -9,12 +9,14 @@ import classNames from "classnames";
 
 export const Home = () => {
   const [toggleLanguage, setToggleLanguage] = useState<boolean>(false);
-  const { i18next } = useNextBuyContext();
+  
   const { t } = useTranslation();
+  const { i18next } = useNextBuyContext();
 
   const changeLanguage = (language: string) => {
-    localStorage.setItem("language", language);
     i18next.changeLanguage(language);
+    localStorage.setItem("language", language);
+
     setToggleLanguage(false);
   };
   return (
@@ -53,7 +55,7 @@ export const Home = () => {
         />
       </button>
       <section>
-        <Hero />
+        <Hero heroText={t('heroText')} language={i18next.language} heroButton={t('heroButton')} />
       </section>
       <ProductionHome title={t("bestSellers")} />
 

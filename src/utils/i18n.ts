@@ -9,7 +9,9 @@ const resources = {
       bestSellers: 'Best Sellers',
       seeAll: 'SEE ALL',
       about: 'About',
-      cart: 'ADD TO CART'
+      cart: 'ADD TO CART',
+      heroText: `If you're looking for the best digital retail products, you've come to the right place! Take advantage of our promotions.`,
+      heroButton: 'BUY NOW!'
     },
   },
   br: {
@@ -19,7 +21,9 @@ const resources = {
       bestSellers: 'Mais vendidos',
       seeAll: 'VER TUDO',
       about: 'Sobre',
-      cart: 'ADICIONAR AO CARRINHO'
+      cart: 'ADICIONAR AO CARRINHO',
+      heroText: `Em busca dos melhores produtos do varejo digital, chegou ao lugar certo! Aproveite nossas promoções.`,
+      heroButton: 'ADQUIRA JÁ!'
     },
   },
 };

@@ -72,7 +72,7 @@ export const Header = () => {
       className={`flex justify-between items-center flex-col ${themeToggle[0]?.bgColor} w-full h-[70px]`}
     >
       <div className="lg:px-0 min-[300px]:px-[10px] w-full max-w-screen-2xl m-auto">
-        <nav className="flex justify-between items-center h-[70px]">
+        <nav className="flex justify-between items-center h-[90px]">
           {/* <button onClick={change} type="button">
             change
           </button> */}

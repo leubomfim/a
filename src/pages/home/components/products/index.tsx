@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
-
+import { RatingProduct } from "./rating";
 interface ProductsType {
   id: number;
   title: string;
@@ -43,9 +43,10 @@ export const ProductionHome = (props: Props) => {
             <div className="pt-[20px]">
               {promotions.map((promotion) => (
                 <div
-                  className="w-[268px] h-[436px] border-solid border-zinc-400 border-1 rounded p-2 flex flex-col"
+                  className="w-[268px] h-[436px] border-solid border-zinc-400 border-1 rounded p-2 flex flex-col hover:shadow-xl shadow-cyan-700 transition-all relative hover:border-[#5086fa79]"
                   key={promotion.id}
                 >
+                  <RatingProduct ratingValue={4} />
                   <div className="w-full h-[150px]"></div>
                   <div className="mt-auto">
                     <p>{promotion.title}</p>

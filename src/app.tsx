@@ -1,8 +1,9 @@
 import ReactQueryProvider from "./utils/providers";
-import { Header } from "./components/header";
+import { Header } from "./layout/header";
 import { PagesRoutes } from "./routes";
 import { useLocation } from "react-router-dom";
-import { Footer } from "./components/footer";
+import { Footer } from "./layout/footer";
+import { ToggleLanguage } from "./components/toggleLanguage";
 
 export const App = () => {
   const location = useLocation();
@@ -10,6 +11,7 @@ export const App = () => {
   return (
     <>
       <ReactQueryProvider>
+        <ToggleLanguage />
         {!verifyPath && <Header />}
         <PagesRoutes />
         {!verifyPath && <Footer />}

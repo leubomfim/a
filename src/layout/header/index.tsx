@@ -97,7 +97,7 @@ export const Header = () => {
               ))}
             </ul>
           </nav>
-          <div className="bg-white">
+          <div>
             <div className="lg:flex min-[300px]:hidden gap-[10px] items-center">
               <button
                 className="rounded-[50%] bg-black text-white h-[50px] transition-all ease-in-out duration-300 hover:bg-gray-700 flex items-center justify-center w-[50px] cursor-pointer text-3xl"
@@ -111,7 +111,7 @@ export const Header = () => {
               </button>
               <Link to={"/login"}>
                 <button
-                  className="transition-all ease-in-out duration-500 bg-white py-[12px] px-[30px] rounded-[4px] text-xl cursor-pointer text-black hover:text-[#5086FA]"
+                  className="transition-all ease-in-out duration-500 py-[12px] px-[30px] rounded-[4px] text-xl cursor-pointer text-black hover:text-[#5086FA]"
                   type="button"
                 >
                   Sign in

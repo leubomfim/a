@@ -1,7 +1,29 @@
-import { useState } from "react";
+export const AvatarUpload = async (
+  file: File,
+  setAvatar: (arg0: string) => void
+) => {
+  const fileAvatar = file;
 
-export const AvatarUpload = () => {
-  const [image, setImage] = useState('');
-  console.log(image)
-  setImage('')
+  if (!file) return;
+
+  const data = new FormData();
+  data.append("file", fileAvatar);
+  data.append(
+    "upload_preset",
+    import.meta.env.VITE_REACT_APP_CLOUDINARY_UPLOAD
+  );
+  data.append("cloud_name", import.meta.env.VITE_REACT_APP_CLOUD_NAME);
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${
+      import.meta.env.VITE_REACT_APP_CLOUD_NAME
+    }/image/upload`,
+    {
+      method: "POST",
+      body: data,
+    }
+  );
+
+  const uploadedImageUrl = await res.json();
+  setAvatar(uploadedImageUrl.url);
 };

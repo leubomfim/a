@@ -8,7 +8,7 @@ export const theme = [
     {
         themeTitle: 'white',
         id: 2,
-        bgColor: 'bg-[#fff]',
+        bgColor: 'bg-[#fafafb]',
         textColor: '#000'
     },
 ]

@@ -11,7 +11,9 @@ const resources = {
       about: 'About',
       cart: 'ADD TO CART',
       heroText: `If you're looking for the best digital retail products, you've come to the right place! Take advantage of our promotions.`,
-      heroButton: 'BUY NOW!'
+      heroButton: 'BUY NOW!',
+      signIn: 'Sign In',
+      signUp: 'Sign Up',
     },
   },
   br: {
@@ -23,7 +25,9 @@ const resources = {
       about: 'Sobre',
       cart: 'ADICIONAR AO CARRINHO',
       heroText: `Em busca dos melhores produtos do varejo digital, chegou ao lugar certo! Aproveite nossas promoções.`,
-      heroButton: 'ADQUIRA JÁ!'
+      heroButton: 'ADQUIRA JÁ!',
+      signIn: 'Logar',
+      signUp: 'Registrar',
     },
   },
 };

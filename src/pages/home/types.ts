@@ -16,7 +16,5 @@ export interface ProductsType {
 
 export interface Props {
   title: string;
-  currencySign: string;
-  products: ProductsType[];
 }
 

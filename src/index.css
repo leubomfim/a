@@ -16,8 +16,15 @@
   font-family: Montserrat, sans-serif;
 }
 
+@layer components {
+  .container {
+    max-width: 1536px;
+    width: 95%;
+    margin: auto;
+  }
+}
+
 body {
   position: relative;
   background-color: #fafafb !important;
 }
-

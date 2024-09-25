@@ -9,7 +9,7 @@ interface Props {
 
 export const Hero = (props: Props) => {
   return (
-    <div className="relative w-full max-w-screen-2xl mt-[100px] m-auto">
+    <div className="relative w mt-[100px] container">
       <div className="flex justify-between">
         <div
           className={c({

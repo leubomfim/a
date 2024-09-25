@@ -3,7 +3,7 @@ import { Logo } from "../../assets/icons/logo";
 
 export const Footer = () => {
   return (
-    <footer className="max-w-screen-2xl mt-[100px] m-auto">
+    <footer className="container sticky bottom-0">
       <Link to={"/"}>
         <Logo />
       </Link>

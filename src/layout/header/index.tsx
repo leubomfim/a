@@ -71,7 +71,7 @@ export const Header = () => {
     <header
       className={`flex justify-between items-center flex-col ${themeToggle[0]?.bgColor} w-full h-[70px]`}
     >
-      <div className="lg:px-0 min-[300px]:px-[10px] w-full max-w-screen-2xl m-auto">
+      <div className="lg:px-0 min-[300px]:px-[10px] container">
         <nav className="flex justify-between items-center h-[90px]">
           {/* <button onClick={change} type="button">
             change
@@ -114,7 +114,7 @@ export const Header = () => {
                   className="transition-all ease-in-out duration-500 py-[12px] px-[30px] rounded-[4px] text-xl cursor-pointer text-black hover:text-[#5086FA]"
                   type="button"
                 >
-                  Sign in
+                  {t("signIn")}
                 </button>
               </Link>
               <Link to={"/register"}>
@@ -122,7 +122,7 @@ export const Header = () => {
                   className="transition-all ease-in-out duration-300 bg-black py-[12px] px-[30px] rounded-[4px] text-xl cursor-pointer text-white hover:bg-gray-700"
                   type="button"
                 >
-                  Sign up
+                  {t("signUp")}
                 </button>
               </Link>
             </div>

@@ -3,10 +3,12 @@ import { Logo } from "../../assets/icons/logo";
 
 export const Footer = () => {
   return (
-    <footer className="container sticky bottom-0">
-      <Link to={"/"}>
-        <Logo />
-      </Link>
+    <footer className="container">
+      <div className="w-[200px] h-[80px]">
+        <Link to={"/"}>
+          <Logo />
+        </Link>
+      </div>
     </footer>
   );
 };

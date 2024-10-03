@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { login } from "../../api/api";
-
+import {  login } from "../../api/api";
+import { useState } from "react";
+// handleCreateUser,
 type Inputs = {
   name: string;
   email: string;
@@ -9,6 +10,7 @@ type Inputs = {
 };
 
 export const Login = () => {
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -16,8 +18,13 @@ export const Login = () => {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setLoading(true)
     await login(data.email, data.password);
+    // await handleCreateUser(data.name,data.email, data.password);
+    setLoading(false)
   };
+
+  if (loading) return <div>Loading...</div>
 
   return (
     <div className="w-full h-full flex justify-center items-center">

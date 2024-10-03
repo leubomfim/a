@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export const Products = () => {
   const [priceValue, setPriceValue] = useState<number[]>([0, 5000]);
-  console.log(priceValue);
   return (
     <div className="container">
       <section className="mt-[80px]">

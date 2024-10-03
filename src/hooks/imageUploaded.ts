@@ -8,16 +8,10 @@ export const AvatarUpload = async (
 
   const data = new FormData();
   data.append("file", fileAvatar);
-  data.append(
-    "upload_preset",
-    import.meta.env.VITE_REACT_APP_CLOUDINARY_UPLOAD
-  );
+  data.append("upload_preset", import.meta.env.VITE_REACT_APP_CLOUDINARY_UPLOAD);
   data.append("cloud_name", import.meta.env.VITE_REACT_APP_CLOUD_NAME);
 
-  const res = await fetch(
-    `https://api.cloudinary.com/v1_1/${
-      import.meta.env.VITE_REACT_APP_CLOUD_NAME
-    }/image/upload`,
+  const res = await fetch(`https://api.cloudinary.com/v1_1/${import.meta.env.VITE_REACT_APP_CLOUD_NAME  }/image/upload`,
     {
       method: "POST",
       body: data,

@@ -1,17 +1,14 @@
 import brazilFrag from "../../assets/images/brazil_frag.png";
 import euaFrag from "../../assets/images/eua_frag.png";
 import classNames from "classnames";
-import { useNextBuyContext } from "../../contexts/context";
+import { useNextBuyContext } from "../../contexts/useContext";
 import { useState } from "react";
 
 export const ToggleLanguage = () => {
   const [toggleLanguage, setToggleLanguage] = useState<boolean>(false);
-
-  const { i18next } = useNextBuyContext();
-  const changeLanguage = (language: string) => {
-    i18next.changeLanguage(language);
-    localStorage.setItem("language", language);
-
+  const { language, setLanguage } = useNextBuyContext();
+  const changeLanguage = (lang: string) => {
+    setLanguage(lang)
     setToggleLanguage(false);
   };
   return (
@@ -23,7 +20,7 @@ export const ToggleLanguage = () => {
         className="fixed z-20 transition-all ease duration-500 hover:scale-110 bottom-4 right-4 rounded-[50%] bg-zinc-800 p-[15px] cursor-pointer"
       >
         <img
-          src={i18next.language === "br" ? brazilFrag : euaFrag}
+          src={language === "br" ? brazilFrag : euaFrag}
           className="w-[30px]"
           alt="a"
           width={48}
@@ -32,7 +29,7 @@ export const ToggleLanguage = () => {
       </button>
       <button
         onClick={() =>
-          changeLanguage(`${i18next.language === "br" ? "en" : "br"}`)
+          changeLanguage(`${language === "br" ? "en" : "br"}`)
         }
         className={classNames(
           "fixed z-20 transition-all ease duration-500 hover:scale-110 bottom-20 right-4 rounded-[50%] bg-zinc-500 p-[15px] cursor-pointer",
@@ -43,7 +40,7 @@ export const ToggleLanguage = () => {
         )}
       >
         <img
-          src={i18next.language === "br" ? euaFrag : brazilFrag}
+          src={language === "br" ? euaFrag : brazilFrag}
           className="w-[30px]"
           width={48}
           height={48}

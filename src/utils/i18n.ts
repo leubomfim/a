@@ -14,6 +14,7 @@ const resources = {
       heroButton: 'BUY NOW!',
       signIn: 'Sign In',
       signUp: 'Sign Up',
+      sortPrice: 'Price'
     },
   },
   br: {
@@ -28,6 +29,7 @@ const resources = {
       heroButton: 'ADQUIRA JÁ!',
       signIn: 'Logar',
       signUp: 'Registrar',
+      sortPrice: 'Preço'
     },
   },
 };

@@ -10,6 +10,11 @@ export const getUserProfile = async () => {
   return response.data;
 };
 
+export const getProducts = async () => {
+  const response = await api.get("api/products");
+  return response.data;
+};
+
 export const login = async (email: string, password: string) => {
   const encryptedEmail = CryptoJS.AES.encrypt(
     email,
@@ -20,25 +25,22 @@ export const login = async (email: string, password: string) => {
     import.meta.env.VITE_REACT_CRYPTO_SECRET
   ).toString();
 
-  const response = await api.post(
-    "api/login",
-    {
-      email: encryptedEmail,
-      password: encryptedPassword,
-    }
-  );
+  const response = await api.post("api/login", {
+    email: encryptedEmail,
+    password: encryptedPassword,
+  });
   return response.data;
 };
 
-export const handleCreateUser = async (name: string, email: string, password: string) => {
-
-  const response = await api.post(
-    "api/createNewUser",
-    {
-      name,
-      email,
-      password,
-    }
-  );
+export const handleCreateUser = async (
+  name: string,
+  email: string,
+  password: string
+) => {
+  const response = await api.post("api/createNewUser", {
+    name,
+    email,
+    password,
+  });
   return response.data;
 };

@@ -14,7 +14,8 @@ const resources = {
       heroButton: 'BUY NOW!',
       signIn: 'Sign In',
       signUp: 'Sign Up',
-      sortPrice: 'Price'
+      sortPrice: 'Price',
+      altHomePage: "Cellphone created with artificial intelligence"
     },
   },
   br: {
@@ -29,7 +30,8 @@ const resources = {
       heroButton: 'ADQUIRA JÁ!',
       signIn: 'Logar',
       signUp: 'Registrar',
-      sortPrice: 'Preço'
+      sortPrice: 'Preço',
+      altHomePage: "Celular criado com inteligência artificial"
     },
   },
 };

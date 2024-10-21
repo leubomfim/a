@@ -1,6 +1,5 @@
 export const AvatarUpload = async (
-  file: File,
-  setAvatar: (arg0: string) => void
+  file: File
 ) => {
   const fileAvatar = file;
 
@@ -19,5 +18,8 @@ export const AvatarUpload = async (
   );
 
   const uploadedImageUrl = await res.json();
-  setAvatar(uploadedImageUrl.url);
+  
+  return uploadedImageUrl.url
 };
+
+// setAvatar: (arg0: string) => void

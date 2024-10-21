@@ -1,5 +1,7 @@
 import c from "classnames";
-import phoneImage from '../../../../assets/images/phone2.jpeg'
+import phoneImage from "../../../../assets/images/phone2.jpeg";
+import { PreloadImage } from "../../../../components/preloadImage";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   heroText: string;
@@ -8,6 +10,7 @@ interface Props {
 }
 
 export const Hero = (props: Props) => {
+  const { t } = useTranslation();
   return (
     <div className="relative w mt-[100px] container">
       <div className="flex justify-between">
@@ -23,7 +26,15 @@ export const Hero = (props: Props) => {
           </button>
         </div>
         <div className="w-[600px]">
-          <img src={phoneImage} alt="a" />
+          {/* <img src={phoneImage} alt="a" /> */}
+          <PreloadImage
+            src={phoneImage}
+            srcSet={`${phoneImage} 500w, ${phoneImage} 1000w, ${phoneImage} 1900px`}
+            sizes="(max-width: 500px) 600px, (max-width: 1900px) 600px, 600px"
+            alt={t("altHomePage")}
+            width={600}
+            height={600}
+          />
         </div>
       </div>
     </div>

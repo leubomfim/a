@@ -3,7 +3,7 @@ import { ProductsType } from "../../../types";
 import { Link } from "react-router-dom";
 import { RatingProduct } from "../rating";
 import { FaCartPlus } from "react-icons/fa";
-import PhoneImage from "../../../../../assets/images/phone2.jpeg";
+import PhoneImage from "../../../../../assets/images/phone2.webp";
 import { PreloadImage } from "../../../../../components/preloadImage";
 
 export const ProductList = () => {

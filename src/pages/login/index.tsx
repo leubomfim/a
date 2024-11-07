@@ -1,71 +1,31 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import {  login } from "../../api/api";
-import { useState } from "react";
-// handleCreateUser,
-type Inputs = {
-  name: string;
-  email: string;
-  password: string;
-  password_confirm: string;
-};
+import { Logo } from "../../assets/icons/logo";
+import { Link } from "react-router-dom";
+import { Form } from "./components/form";
+import { FormPresentation } from "./components/FormPresentation";
+import { LoginBackground } from "./components/loginBackground";
+import { useTranslation } from "react-i18next";
 
 export const Login = () => {
-  const [loading, setLoading] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    setLoading(true)
-    await login(data.email, data.password);
-    // await handleCreateUser(data.name,data.email, data.password);
-    setLoading(false)
-  };
-
-  if (loading) return <div>Loading...</div>
-
+  const { t } = useTranslation();
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className="border border-zinc-500 border-solid"
-            type="text"
-            {...register("name", { required: true, minLength: 3 })}
-          />
-
-          <input
-            className="border border-zinc-500 border-solid"
-            type="text"
-            {...register("email", { required: true })}
-          />
-          <input
-            className="border border-zinc-500 border-solid"
-            type="password"
-            {...register("password", { required: true })}
-          />
-          <input
-            className="border border-zinc-500 border-solid"
-            type="password"
-            {...register("password_confirm", {
-              required: true,
-              validate: (val: string) => {
-                if (watch("password") !== val) {
-                  return "Your password do no match!";
-                }
-              },
-            })}
-          />
-          <input type="submit" />
-          {errors.name && (
-            <div>
-              <br /> <span>This field is required</span>
-            </div>
-          )}
-        </form>
-      </div>
-    </div>
+    <main className="flex">
+      <section className="flex items-center justify-end h-full grow">
+        <div className="p-[20px] h-[100vh] w-[30%] flex justify-center items-center relative">
+          <Link to={"/"}>
+            <button className="absolute left-5 top-10 bg-zinc-700 text-white px-4 py-2 rounded font-semibold text-2xl">
+              {"<"}
+            </button>
+          </Link>
+          <div className="absolute top-20">
+            <Logo />
+          </div>
+          <div className="flex flex-col items-center gap-12">
+            <FormPresentation translations={t} />
+            <Form translations={t} />
+          </div>
+        </div>
+         <LoginBackground />
+      </section>
+    </main>
   );
 };

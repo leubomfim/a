@@ -22,9 +22,45 @@
     width: 95%;
     margin: auto;
   }
+
+  .fabkit-Rating-star {
+    flex: 0 0 auto;
+    height: 15px;
+    width: 15px;
+  }
+  .fabkit-Rating-background {
+    fill: #0000002a;
+  }
+  .fabkit-Rating-fill {
+    fill: #4e66b8;
+  }
+
+  .bg-image {
+    background-image:  url('https://cdn.prod.website-files.com/6319e713f5888cb05c07ca4b/633307ee61fc8dd2106b7fa2_homepage-bg.webp');
+  }
+
+  .form-control {
+    position: relative;
+    width: 400px;
+  }
+
+  .form-control input:focus {
+    border-left: #0C31F1 solid 2px !important;
+  }
 }
 
-body {
+body, #root, html {
+  min-height: 100vh;
   position: relative;
-  background-color: #fafafb !important;
+  background-color: white !important;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main { 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

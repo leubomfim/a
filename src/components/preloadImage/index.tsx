@@ -7,9 +7,10 @@ interface PreloadImageProps {
   alt: string;
   width?: number;
   height?: number;
+  className?: string;
 }
 
-export const PreloadImage = ({ src, srcSet, sizes, alt, width, height }: PreloadImageProps) => (
+export const PreloadImage = ({ src, srcSet, sizes, alt, width, height, className }: PreloadImageProps) => (
   <>
     <Helmet>
       <link rel="preload" href={src} as="image" />
@@ -23,6 +24,7 @@ export const PreloadImage = ({ src, srcSet, sizes, alt, width, height }: Preload
       alt={alt} 
       width={width} 
       height={height} 
+      className={className}
     />
   </>
 );

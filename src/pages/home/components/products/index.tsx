@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Props } from "../../types";
 import { ProductList } from "./productList";
 
+
 export const ProductionHome = (props: Props) => {
   const { t } = useTranslation();
   return (
@@ -14,14 +15,14 @@ export const ProductionHome = (props: Props) => {
               {props.title}
             </h3>
             <Link
-              className="text-[0.875rem] text-orange-500 font-semibold"
+              className="text-[0.875rem] text-blue-800 font-semibold"
               to="/products"
             >
               {t("seeAll")} {`>`}
             </Link>
           </div>
-          <div className="pt-[20px]">
-            <ProductList />
+          <div className="pt-[20px] flex gap-[30px]">
+            <ProductList sectionTitle={props.title}  />
           </div>
         </div>
       </div>

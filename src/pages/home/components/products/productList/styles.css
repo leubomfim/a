@@ -1,0 +1,9 @@
+.product-card {
+    border: 1px solid #acadb100;
+    transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    border: 1px solid #d5d6da;
+    transition: all 0.3s ease-in-out;
+}

@@ -22,7 +22,7 @@ export const Home = () => {
 
   return (
     <main className="relative z-10">
-      <section>
+      <section className=" h-[86vh] bg-image">
         <Hero
           heroText={t("heroText")}
           language={i18next.language}

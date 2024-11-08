@@ -13,7 +13,7 @@ export const Hero = (props: Props) => {
   const { t } = useTranslation();
   return (
     <div className="relative w mt-[100px] container">
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <div
           className={c({
             "w-[550px]": props.language === "br",

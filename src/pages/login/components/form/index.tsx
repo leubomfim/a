@@ -6,6 +6,7 @@ import { Inputs } from "../../type";
 import { TFunction } from "i18next";
 
 export const Form = ({ translations }: { translations: TFunction<"translation", undefined> }) => {
+  const [remember, setRemember] = useState(false);
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -33,7 +34,7 @@ export const Form = ({ translations }: { translations: TFunction<"translation", 
       </div>
 
       {errors.email && (
-        <div>
+        <div>   
           <br /> <span>This field is required</span>
         </div>
       )}
@@ -45,13 +46,13 @@ export const Form = ({ translations }: { translations: TFunction<"translation", 
         <Input type="password" registerName="password" register={register} />
       </div>
       <div className="flex justify-between w-full items-center mt-[15px]">
-        <div className="flex items-center gap-2">
+        <div onClick={() => setRemember((prev) => prev = !prev)} className="flex items-center gap-2 cursor-pointer">
           <div className="w-[25px] h-[25px] border-1 border-solid border-zinc-400 rounded-full relative">
-            <div className="rounded-full bg-blue-800 w-[85%] h-[85%] absolute left-1/2 ml-[-9.80px] top-1/2 mt-[-9.80px]"></div>
+            <div className={`${remember ? 'bg-blue-800' : ''} rounded-full w-[85%] h-[85%] absolute left-1/2 ml-[-9.80px] top-1/2 mt-[-9.3px]`}></div>
           </div>
-          <span className=" opacity-60">{translations('remember')}</span>
+          <span className="opacity-60">{translations('remember')}</span>
         </div>
-        <p className="opacity-50 cursor-pointer">{translations('forgotPassword')}</p>
+        <p className="opacity-50 cursor-pointer underline">{translations('forgotPassword')}</p>
       </div>
 
       <input

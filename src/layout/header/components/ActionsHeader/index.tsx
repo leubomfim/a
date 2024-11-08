@@ -1,10 +1,8 @@
-// import { useState } from "react";
-// import { IoIosSearch } from "react-icons/io";
-// import { IoMdClose } from "react-icons/io";
-
 import { Link } from "react-router-dom";
 import { useNextBuyContext } from "../../../../contexts/useContext";
 import { TFunction } from "i18next";
+import { FaRegUserCircle } from "react-icons/fa";
+import { IoIosSearch } from "react-icons/io";
 
 export const ActionsHeader = ({
   t,
@@ -12,41 +10,25 @@ export const ActionsHeader = ({
   t: TFunction<"translation", undefined>;
 }) => {
   const { isLogged } = useNextBuyContext();
+  console.log(isLogged);
   // const [toggleSearch, setToggleSearch] = useState(false);
   return (
     <div>
-      <div className="lg:flex min-[300px]:hidden gap-[10px] items-center">
-        {/* <button
-          className="rounded-[50%] bg-black text-white h-[50px] transition-all ease-in-out duration-300 hover:bg-gray-700 flex items-center justify-center w-[50px] cursor-pointer text-3xl"
-          onClick={() => {
-            setToggleSearch(!toggleSearch);
-          }}
-          type="button"
-        >
-          <IoIosSearch className={toggleSearch ? "hidden" : ""} />
-          <IoMdClose className={!toggleSearch ? "hidden" : ""} />
-        </button> */}
-        {!isLogged && (
-          <>
-            <Link to={"/login"}>
-              <button
-                className="transition-all ease-in-out duration-500 py-[12px] px-[30px] rounded-[4px] text-xl cursor-pointer text-black hover:text-[#5086FA]"
-                type="button"
-              >
-                {t("signIn")}
-              </button>
+      <div className="lg:flex min-[300px]:hidden gap-[30px] items-center">
+        <IoIosSearch className="text-3xl cursor-pointer" />
+        <div className="flex gap-2 items-center">
+          <FaRegUserCircle className="text-4xl" />
+          <p className="w-[90px] text-[14px]">
+            {t("hello")}{" "}
+            <Link to="/login" className="font-semibold">
+              {t("signIn")}{" "}
             </Link>
-            <Link to={"/register"}>
-              <button
-                className="transition-all ease-in-out duration-300 bg-black py-[12px] px-[30px] rounded-[4px] text-xl cursor-pointer text-white hover:bg-gray-700"
-                type="button"
-              >
-                {t("signUp")}
-              </button>
+            {t("or")}{" "}
+            <Link to="/register" className="font-bold">
+              {t("signUp")}
             </Link>
-          </>
-        )}
-        {isLogged && <div>Logado</div>}
+          </p>
+        </div>
       </div>
       {/* X-egg Menu */}
       <div className="lg:hidden min-[300px]:flex"></div>

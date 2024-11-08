@@ -21,7 +21,7 @@ export const Hero = (props: Props) => {
           })}
         >
           <h2 className="text-5xl text-white">{props.heroText}</h2>
-          <button className="w-[200px] bg-blue-500 text-white rounded py-3 font-semibold text-xs mt-[30px] transition-colors hover:bg-blue-400">
+          <button className="w-[200px] bg-[#FDE021] text-black rounded py-3 font-semibold text-xs mt-[30px] transition-colors hover:bg-blue-400">
             {props.heroButton}
           </button>
         </div>

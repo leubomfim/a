@@ -1,5 +1,3 @@
 export const LoginImage = () => {
- return (
-<>
- )
-}
+  return <></>;
+};

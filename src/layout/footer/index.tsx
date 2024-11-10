@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className=" m-auto w-[95%]">
       <div className="w-[200px] h-[80px]">
         <Link to={"/"}>
-          <Logo />
+          <Logo fill="#000" />
         </Link>
       </div>
     </footer>

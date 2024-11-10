@@ -7,7 +7,7 @@ import { changeViewType } from "../../../../../state/profile/profileSlice";
 
 export const ViewActionArea = ({ t }: { t: TFunction<"translation", undefined> }) => {
   const dispatch: AppDispatch = useDispatch();
-  const viewType = useSelector((state: RootState) => state.profile.viewType);
+  const viewType = useSelector((state: RootState) => state.nextBuy.viewType);
   const viewButtons = [
     {
       name: 'grid',

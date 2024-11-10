@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
+      blog: 'Blog',
       title: "Products",
       titlePromotion: "Promotions",
       bestSellers: "Best Sellers",
@@ -38,6 +39,7 @@ const resources = {
   },
   br: {
     translation: {
+      blog: 'Blog',
       title: "Produtos",
       titlePromotion: "Promoções",
       bestSellers: "Mais vendidos",

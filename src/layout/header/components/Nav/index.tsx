@@ -5,8 +5,8 @@ import { TFunction } from "i18next";
 export const Nav = ({ t }: { t: TFunction<"translation", undefined> }) => {
   const navItems: NavItemsType[] = [
     {
-      label: t("title"),
-      path: "/products",
+      label: t("blog"),
+      path: "/",
     },
     {
       label: t("bestSellers"),

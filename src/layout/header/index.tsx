@@ -3,6 +3,8 @@ import { Nav } from "./components/Nav";
 // import { SearchBar } from "./components/SearchBar";
 import { ActionsHeader } from "./components/ActionsHeader";
 import { Link } from "react-router-dom";
+// import logo from "../../assets/images/next-buy-logo.svg";
+// import { PreloadImage } from "../../components/preloadImage";
 import { Logo } from "../../assets/icons/logo";
 
 export const Header = () => {
@@ -11,9 +13,9 @@ export const Header = () => {
     <header className={`flex flex-col items-center w-full`}>
       <div className="bg-black text-white p-2 w-full text-center">
         <p>
-          {t('freeShipping')}{" "}
+          {t("freeShipping")}{" "}
           <a className="underline" href="">
-            {t('shopNow')}
+            {t("shopNow")}
           </a>
         </p>
       </div>
@@ -24,7 +26,7 @@ export const Header = () => {
             {/* <SearchBar /> */}
           </div>
           <Link className="left-1/2 ml-[-100px] absolute" to={"/"}>
-            <Logo />
+            <Logo fill="#000" />
           </Link>
           <ActionsHeader t={t} />
         </div>

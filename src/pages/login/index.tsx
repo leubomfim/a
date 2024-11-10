@@ -17,7 +17,7 @@ export const Login = () => {
             </button>
           </Link>
           <div className="absolute top-20">
-            <Logo />
+            <Logo fill={'#000'} />
           </div>
           <div className="flex flex-col items-center gap-12">
             <FormPresentation translations={t} />

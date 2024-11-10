@@ -1,10 +1,13 @@
+import { ToggleLanguage } from "./components/toggleLanguage";
+import { ActionsResults } from "./layout/ActionsResults";
+import { Footer } from "./layout/footer";
 import { Header } from "./layout/header";
 import { PagesRoutes } from "./routes";
-import { useLocation } from "react-router-dom";
-import { Footer } from "./layout/footer";
-import { ToggleLanguage } from "./components/toggleLanguage";
-import { Provider } from "react-redux";
+
 import { store } from "./state/store";
+
+import { Provider } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 export const App = () => {
   const location = useLocation();
@@ -16,6 +19,7 @@ export const App = () => {
   return (
     <>
       <Provider store={store}>
+        <ActionsResults />
         <ToggleLanguage />
         {!verifyPath && <Header />}
         <PagesRoutes />

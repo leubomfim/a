@@ -47,6 +47,10 @@
   .form-control input:focus {
     border-left: #0C31F1 solid 2px !important;
   }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
 }
 
 body, #root, html {

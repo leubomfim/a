@@ -5,18 +5,23 @@ interface CounterState {
   products: ProductState[];
   sortType: string
   viewType: string
+  actionsType: string
 }
 
 const initialState: CounterState = {
   products: [],
   sortType: "by_rated",
-  viewType: 'grid'
+  viewType: 'grid',
+  actionsType: ""
 };
 
-const profileSlice = createSlice({
+const nextBuySlicer = createSlice({
   name: "products",
   initialState,
   reducers: {
+    changeActionType: (state, action) => {
+      state.actionsType = action.payload;
+    },
     changeViewType: (state, action) => {
       state.viewType = action.payload;
     },
@@ -35,5 +40,5 @@ const profileSlice = createSlice({
   },
 });
 
-export const { increment, decrement ,addProducts, setSortType, changeViewType } = profileSlice.actions;
-export default profileSlice.reducer;
+export const { increment, decrement ,addProducts, setSortType, changeViewType, changeActionType } = nextBuySlicer.actions;
+export default nextBuySlicer.reducer;

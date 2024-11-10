@@ -11,7 +11,7 @@ export const ProductListInPage = () => {
     queryKey: ["getProducts"],
     queryFn: getProducts,
   });
-  const profileState = useSelector((state: RootState) => state.profile);
+  const nextBuyState = useSelector((state: RootState) => state.nextBuy);
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -20,7 +20,7 @@ export const ProductListInPage = () => {
     return <div>Error</div>;
   }
 
-  const sortedItems: ProductsType[] | undefined = sortProducts(data, profileState.sortType);
+  const sortedItems: ProductsType[] | undefined = sortProducts(data, nextBuyState.sortType);
   return (
     <>
       <div>

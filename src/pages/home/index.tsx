@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { ProductionHome } from "./components/products";
 
 import { Props } from "./types";
+import { GeometricBackground } from "./components/geometricBackground";
 
 export const Home = () => {
   const { t } = useTranslation();
@@ -22,7 +23,8 @@ export const Home = () => {
 
   return (
     <main className="relative z-10">
-      <section className=" h-[86vh] bg-[#0277BF]">
+      <section className=" h-[86vh] bg-blue-800 relative overflow-hidden">
+        <GeometricBackground />
         <Hero
           heroText={t("heroText")}
           language={i18next.language}
@@ -31,9 +33,7 @@ export const Home = () => {
       </section>
       {productsComponents.map((comp) => (
         <section key={comp.title} className="w-full mt-[80px] m-auto">
-          <ProductionHome
-            title={comp.title}
-          />
+          <ProductionHome title={comp.title} />
         </section>
       ))}
     </main>

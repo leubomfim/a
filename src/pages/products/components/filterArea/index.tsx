@@ -1,10 +1,15 @@
 import * as Slider from "@radix-ui/react-slider";
 import { TFunction } from "i18next";
 import { useState } from "react";
+import { motion } from "framer-motion";
 export const FilterArea = ({t}: { t: TFunction<"translation", undefined> }) => {
   const [priceValue, setPriceValue] = useState<number[]>([0, 5000]);
   return (
-    <aside className="bg-white max-w-[300px] w-full rounded-[2px] p-3">
+    <motion.aside
+    initial={{ x: -150,opacity: 0 }}
+    animate={{ x: 0,opacity: 1 }}
+    transition={{ duration: 1.7, type: "spring" }}
+    className="bg-white max-w-[300px] w-full rounded-[2px] p-3">
       <div>
         <div className="flex flex-col gap-1 text-lg">
           <label className="mb-2" htmlFor="by_name">
@@ -49,6 +54,6 @@ export const FilterArea = ({t}: { t: TFunction<"translation", undefined> }) => {
       <button className="w-full bg-blue-500 text-white rounded py-3 font-semibold text-xs flex justify-center items-center gap-2 transition-colors hover:bg-blue-400 mt-[15px]">
         {t('filterButton')}
       </button>
-    </aside>
+    </motion.aside>
   );
 };

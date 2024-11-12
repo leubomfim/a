@@ -5,6 +5,7 @@ import { sortProducts } from "./hooks/sortByTitle";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
 import { ProductsType } from "../../../home/types";
+import { motion } from "framer-motion";
 
 export const ProductListInPage = () => {
   const { data, error, isLoading } = useQuery({
@@ -20,17 +21,24 @@ export const ProductListInPage = () => {
     return <div>Error</div>;
   }
 
-  const sortedItems: ProductsType[] | undefined = sortProducts(data, nextBuyState.sortType);
+  const sortedItems: ProductsType[] | undefined = sortProducts(
+    data,
+    nextBuyState.sortType
+  );
   return (
     <>
-      <div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2.5, type: "spring" }}
+      >
         {sortedItems?.map((product) => (
           <div key={product.id}>
             <p>{product.name}</p>
             <p>{product.price}</p>
           </div>
         ))}
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -33,7 +33,7 @@ const resources = {
       forgotPassword: "Forgot password?",
       hello: "Hello,",
       or: "or",
-      freeShipping: "FREE SHIPPING ON ALL ORDERS! Shop Now",
+      freeShipping: "FREE SHIPPING ON ALL ORDERS!",
       shopNow: 'Shop Now'
     },
   },

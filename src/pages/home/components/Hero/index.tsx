@@ -1,5 +1,5 @@
 import c from "classnames";
-import phoneImage from "../../../../assets/images/phone2.webp";
+import phoneImage from "../../../../assets/images/homepageImage600x600.webp";
 import { PreloadImage } from "../../../../components/preloadImage";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -13,8 +13,8 @@ interface Props {
 export const Hero = (props: Props) => {
   const { t } = useTranslation();
   return (
-    <div className="relative w mt-[100px] container">
-      <div className="flex justify-between items-center">
+    <div className="relative mt-[100px] container">
+      <div className="flex justify-between items-center relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}

@@ -2,7 +2,7 @@ import c from "classnames";
 import phoneImage from "../../../../assets/images/phone2.webp";
 import { PreloadImage } from "../../../../components/preloadImage";
 import { useTranslation } from "react-i18next";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 interface Props {
   heroText: string;
@@ -16,9 +16,9 @@ export const Hero = (props: Props) => {
     <div className="relative w mt-[100px] container">
       <div className="flex justify-between items-center">
         <motion.div
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, type: 'spring' }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, type: "spring" }}
           className={c({
             "w-[550px]": props.language === "br",
             "w-[570px]": props.language !== "br",
@@ -29,7 +29,13 @@ export const Hero = (props: Props) => {
             {props.heroButton}
           </button>
         </motion.div>
-        <div className="w-[600px]">
+        <motion.div
+          className="w-[600px]"
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -50, opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           {/* <img src={phoneImage} alt="a" /> */}
           <PreloadImage
             src={phoneImage}
@@ -39,7 +45,7 @@ export const Hero = (props: Props) => {
             width={600}
             height={600}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

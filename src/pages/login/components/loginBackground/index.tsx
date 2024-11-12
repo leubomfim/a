@@ -1,4 +1,4 @@
-import imgShop from "../../../../assets/images/loginImage2000x1333.jpg";
+import imgShop from "../../../../assets/images/modern.webp";
 import { PreloadImage } from "../../../../components/preloadImage";
 
 export const LoginBackground = () => {
@@ -9,3 +9,4 @@ export const LoginBackground = () => {
     </div>
   );
 };
+        

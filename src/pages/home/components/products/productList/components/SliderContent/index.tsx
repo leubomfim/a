@@ -11,6 +11,7 @@ export const SliderContent = ({ product }: { product: ProductsType }) => {
     <>
       <div className="w-full h-[200px] pt-5 flex items-center justify-center">
         <PreloadImage
+          loadingType="eager"
           src={PhoneImage}
           srcSet={`${PhoneImage} 500w, ${PhoneImage} 1000w, ${PhoneImage} 1900px`}
           sizes="(max-width: 500px) 170px, (max-width: 1900px) 170px, 170px"

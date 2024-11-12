@@ -38,6 +38,7 @@ export const Hero = (props: Props) => {
         >
           {/* <img src={phoneImage} alt="a" /> */}
           <PreloadImage
+            loadingType="eager"
             src={phoneImage}
             srcSet={`${phoneImage} 500w, ${phoneImage} 1000w, ${phoneImage} 1900px`}
             sizes="(max-width: 500px) 480px, (max-width: 1900px) 600px, 600px"

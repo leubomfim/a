@@ -8,16 +8,17 @@ interface PreloadImageProps {
   width?: number;
   height?: number;
   className?: string;
+  loadingType?: string;
 }
 
-export const PreloadImage = ({ src, srcSet, sizes, alt, width, height, className }: PreloadImageProps) => (
+export const PreloadImage = ({ src, srcSet, sizes, alt, width, height, className, loadingType }: PreloadImageProps) => (
   <>
     <Helmet>
       <link rel="preload" href={src} as="image" />
       {srcSet && <link rel="preload" href={srcSet.split(',')[0].split(' ')[0]} as="image" />}
     </Helmet>
     <img
-      loading='lazy'
+      loading={loadingType as "lazy" | "eager" | undefined}
       src={src} 
       srcSet={srcSet} 
       sizes={sizes} 

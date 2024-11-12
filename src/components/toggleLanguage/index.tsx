@@ -21,6 +21,7 @@ export const ToggleLanguage = () => {
         className="fixed z-20 transition-all ease duration-500 hover:scale-110 bottom-4 right-4 rounded-[50%] bg-zinc-800 p-[15px] cursor-pointer"
       >
         <PreloadImage
+          loadingType="lazy"
           src={language === "br" ? brazilFrag : euaFrag}
           srcSet={`${language === "br" ? brazilFrag : euaFrag} 500w, ${language === "br" ? brazilFrag : euaFrag} 1000w, ${language === "br" ? brazilFrag : euaFrag} 1500w`}
           sizes="(max-width: 500px) 30px, (max-width: 30px) 1000px, 30px"
